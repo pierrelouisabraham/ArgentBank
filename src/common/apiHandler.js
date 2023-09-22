@@ -33,3 +33,22 @@ export const getUser = token => axios({
   }
 })
   .then(response => response.data)
+
+
+
+export const updateUserProfile = (token, firstname, lastname) => axios({
+  method: 'put',
+  url: postProfile, 
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${token}`
+  },
+  data: {
+    firstName: firstname,
+    lastName: lastname
+  }
+})
+  .then(response => response.data)
+  .catch(error => {
+    console.error('Erreur lors de la mise à jour du profil :', error);
+  });

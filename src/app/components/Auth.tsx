@@ -36,6 +36,7 @@ const Auth = () => {
   }
 
   return (
+    <>
     <section className="sign-in-content">
       <i className="fa fa-user-circle sign-in-icon"></i>
       <h1>Sign In</h1>
@@ -53,13 +54,13 @@ const Auth = () => {
           <label htmlFor="remember-me">Remember me</label>
         </div>
 
-        <a href="./user.html" className="sign-in-button">Sign In</a>
+
 
         <button className="sign-in-button" type='submit'>Sign In</button>
 
       </form>
       <p>{token}</p>
-    </section>
+    </section></>
   );
 };
 

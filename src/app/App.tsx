@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import Auth from './components/Auth'
 import Profile from './components/Profile.jsx'
+import '../style/main.css'
 
 function App() {
   return (
