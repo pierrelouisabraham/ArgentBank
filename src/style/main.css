@@ -7,18 +7,12 @@ html {
   height: 100%;
 }
 
-@font-face {
-  font-family: 'Helvetica';
-  src: url('../resources/Fonts/Helvetica.ttf');
-  src: url('../resources/Fonts/Helvetica-Bold.ttf');
-  font-family: 'Avenir';
-  src: url('../resources/Fonts/avenir_ff/AvenirLTStd-Black.otf');
-  src: url('../resources/Fonts/avenir_ff/AvenirLTStd-Roman.otf');
-}
+
 
 #root {
   height: 100%;
 }
+
 body {
   margin: 0;
   display: flex;
@@ -32,21 +26,25 @@ body {
 }
 
 .bg-dark {
+  height: 82%;
   background-color: #12002b;
 }
 
 .sr-only {
   border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  /* 1 */
   -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important; /* 2 */
+  clip-path: inset(50%) !important;
+  /* 2 */
   height: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-  white-space: nowrap !important; /* 3 */
+  white-space: nowrap !important;
+  /* 3 */
 }
 
 .main-nav {
@@ -59,6 +57,9 @@ body {
 .main-nav a {
   font-weight: bold;
   color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .main-nav a.router-link-exact-active {
@@ -120,14 +121,17 @@ body {
     background-position: 0% 33%;
   }
 
-  
+
   .singIn {
     display: flex;
   }
-  .userLogo{
+
+  .userLogo {
     width: 16px;
     height: 16px;
+    margin-right: 9px;
   }
+
   .hero-content {
     position: absolute;
     top: 50px;
@@ -143,6 +147,12 @@ body {
   .hero-content .text {
     font-size: 1.2rem;
   }
+
+  .signOutLogo {
+    height: 16px;
+    margin-right: 9px;
+  }
+
 }
 
 .features {
@@ -155,6 +165,27 @@ body {
     flex-direction: row;
   }
 }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-name {
+    margin: 0px 10px 20px 10px;
+    padding: 10px;
+  }
+
+  .button-edit-profile {
+    margin: 0px 10px 20px 10px;
+    padding: 10px;
+    width: 80px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+  }
 
 .feature-icon {
   width: 100px;
@@ -298,6 +329,59 @@ body {
   color: #fff;
 }
 
+section#error {
+  display: flex;
+  flex-direction: column;
+  color: #00bc77;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+#error div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#error h1 {
+  font-weight: 700;
+  font-size: 288px;
+  line-height: 142.6%;
+  font-style: normal;
+  margin: 0;
+}
+
+#error h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 142.6%;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+#error a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 142.6%;
+  text-decoration-line: underline;
+  color: #00bc77;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.error {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: red;
+}
+
 @media (min-width: 720px) {
   .account {
     flex-direction: row;
@@ -309,5 +393,21 @@ body {
 
   .transaction-button {
     width: 200px;
+  }
+
+  section#error {
+    top: 115px;
+  }
+
+  #error h1 {
+    font-size: 96px;
+  }
+
+  #error h2 {
+    font-size: 18px;
+  }
+
+  #error a {
+    font-size: 14px;
   }
 }

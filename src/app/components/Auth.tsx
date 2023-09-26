@@ -10,8 +10,9 @@ const Auth = () => {
   const navigate = useNavigate()
   const token = useSelector(selectToken)
 
-  const [login, setLogin] = useState('tony@stark.com');
-  const [password, setPassword] = useState('password123');
+  const [login, setLogin] = useState();
+  const [password, setPassword] = useState();
+  const [error, setError] = useState(null);
 
   const handleLoginChange = (e) => {
     setLogin(e.target.value)
@@ -31,8 +32,10 @@ const Auth = () => {
         dispatch(setToken(data.body.token))
         navigate('/profile')
       })
-
-    console.log(login + password)
+      .catch((error) => {
+        console.error('Error in one or two fields:', error);
+        setError('Authentification error in one or two fields: ' + error.message);
+      });
   }
 
   return (
@@ -53,13 +56,12 @@ const Auth = () => {
           <input type="checkbox" id="remember-me" />
           <label htmlFor="remember-me">Remember me</label>
         </div>
-
+        {error && <span className="error">{error}</span>}
 
 
         <button className="sign-in-button" type='submit'>Sign In</button>
 
       </form>
-      <p>{token}</p>
     </section></>
   );
 };
